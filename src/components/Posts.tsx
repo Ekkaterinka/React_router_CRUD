@@ -4,6 +4,7 @@ import { useParams ,Link  } from 'react-router-dom';
 interface Data {
     id: number;
     name: string;
+    content: string;
 }
 export default function Posts() {
     const [posts, setPosts] = useState<Data[]>([])
@@ -21,10 +22,10 @@ export default function Posts() {
 
     console.log(posts)
 
-    const List = posts.map(([rId, e], idx) => {
-        return (<li key={rId} > 
-        <Link to={`/Posts/${rId}`}>
-        {e.content}</Link> 
+    const List = posts.map((i) => {
+        return (<li key={i.id} > 
+        <Link to={`/Post/${rId}`}>
+        {i.content}</Link> 
         </li>
         )
     })

@@ -1,5 +1,5 @@
-import { Link, Navigate, useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react'
+import { Link} from 'react-router-dom';
+import { useState } from 'react'
 
 export default function EditPost({ id }: { id: any }) {
     const [content, setContent] = useState('');
@@ -15,9 +15,6 @@ export default function EditPost({ id }: { id: any }) {
             },
         })
             .then((response) => response.json())
-            .then((data) => {
-                setContent('');
-            });
     };
 
     const Edit =

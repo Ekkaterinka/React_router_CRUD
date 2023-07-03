@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink, Link, Navigate, useSearchParams } from "react-router-dom";
+import { Routes, Route, NavLink, Link } from "react-router-dom";
 import './App.css'
 import Posts from "./components/Posts";
 import New from "./components/New";
@@ -6,8 +6,7 @@ import Post from "./components/Post";
 import EditPost from "./components/EditPost";
 
 function App() {
-  const [searchParams] = useSearchParams();
-  const id = searchParams.get('id');
+
 
   return (
     <>

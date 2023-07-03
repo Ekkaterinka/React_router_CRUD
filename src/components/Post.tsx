@@ -34,9 +34,9 @@ export default function Post({ id }: { id: any }) {
 
     return (
         <div>
-            <p>{post.content}</p>
+            <p>{post}</p>
             <Link to="/edit"> <button>Редактировать</button></Link>
-            <button onClick={deleteNote}>Удалить</button>
+            <Link to={'/'}><button onClick={deleteNote} >Удалить</button></Link>
         </div>
     )
 }
