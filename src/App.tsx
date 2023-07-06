@@ -1,9 +1,9 @@
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import './App.css'
 import Posts from "./components/Posts";
-import New from "./components/New";
-import Post from "./components/Post";
-import EditPost from "./components/EditPost";
+import AddPost from "./components/AddPost";
+import WatchPost  from "./components/WatchPost ";
+import PostEdit from "./components/PostEdit ";
 
 function App() {
 
@@ -11,14 +11,11 @@ function App() {
   return (
     <>
     <div>
-    <NavLink to="/"></NavLink>
-    <Link to="/new"> <button>Создать пост </button> </Link> 
     <Routes>
-        <Route path='/' element={<Posts />} />
-        <Route path='/new' element={<New/>} />
-        <Route path='/post/:rId' element={<Post/>} />
-        <Route path='/edit' element={<EditPost/>} />
-    
+          <Route path   ='/posts/new'element={<AddPost/>}/>
+          <Route path   ='/'element={<Posts/>}/>
+          <Route path   ='/posts/:id'element={<WatchPost/>}/>
+          <Route path   ='/posts/:id/edit'element={<PostEdit/>}/>
         </Routes>
     </div>
     </>
