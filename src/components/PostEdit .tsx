@@ -42,31 +42,29 @@ const PostEdit = () => {
         <>
             {Object.keys(data).map((i) => {
                 return (
-                <div key={data[i].id}>
-                    <div > Имя:{data[i].name}</div>
-                    <div >
-                        <p> контент: {data[i].content} </p>
-                        <form onSubmit={(e) => onSaveData(e)}>
-                            <input
-                                type={'text'}
-                                name='content'
-                            />
-                            <span>
-                                <Link
-                                    to={`/posts/${id}`}
+                    <div key={data[i].id}>
+                        <div > Имя:{data[i].name}</div>
+                        <div >
+                            <form onSubmit={(e) => onSaveData(e)}>
+                                <h5>Контент:</h5>
+                                <textarea type={'text'}
+                                    name='content' cols="20" rows="5">{data[i].content}</textarea>
+                                <span>
+                                    <Link
+                                        to={`/posts/${id}`}
+                                    >
+                                        отмена
+                                    </Link>
+                                </span>
+                                <button
+                                    type="submit"
                                 >
-                                    отмена
-                                </Link>
-                            </span>
-                            <button
-                                type="submit"
-                            >
-                                сохранить
-                            </button>
-                        </form>
-                        <span >{data[i].created}</span>
-                    </div>
-                </div>)
+                                    сохранить
+                                </button>
+                            </form>
+                            <span >{data[i].created}</span>
+                        </div>
+                    </div>)
             }
             )
             }
